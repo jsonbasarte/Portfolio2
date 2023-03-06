@@ -2,7 +2,9 @@
   <div class="layout-container">
     <div class="column-one">
       <div class="logo-container">
-        <div class="logo"></div>
+        <div class="logo">
+          <img src="../../public/profile.png" alt="" />
+        </div>
       </div>
       <div class="title">Frontend Developer</div>
       <div class="social">
@@ -13,20 +15,26 @@
     <div class="column-two">
       <div class="about">
         <h2>About</h2>
-        Highly motivated frontend developer based in Philippines with a passion
-        for creating user interfaces and a collaborative team member.
+        Highly motivated frontend developer with a passion for creating user
+        interfaces and a collaborative team member.
       </div>
-      <!-- <div class="dev-tools">
-        <h2>Development tools</h2>
-        <ul>
-          <li>Git</li>
-          <li>Github</li>
-          <li>Figma</li>
-          <li>Adobe XD</li>
-          <li>VS Code</li>
-          <li>Sourcetree</li>
-        </ul>
-      </div> -->
+      <div class="my-works">
+        <h2>My Works</h2>
+        <div class="work-item-container">
+          <div class="work-item">
+            <div class="item-action">
+              <v-btn class="mr-2" size="small">DEMO</v-btn>
+              <v-btn size="small">VIEW CODE</v-btn>
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="item-action">
+              <v-btn class="mr-2" size="small">DEMO</v-btn>
+              <v-btn size="small">VIEW CODE</v-btn>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="projects">
         <h2>Sample UI</h2>
         <i class="fa-regular fa-question-circle"></i>
@@ -38,7 +46,7 @@
             class="project-item"
           >
             <img :src="image" alt="" />
-            <div class="overlay"></div>
+            <div class="overlay">VIEW</div>
           </div>
         </div>
       </div>
@@ -77,19 +85,38 @@ export default {
 };
 </script>
 <style scoped>
+::-webkit-scrollbar {
+  width: 8px;
+  border: 1px solid #d5d5d5;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #b0b0b0;
+}
 .layout-container {
   display: flex;
+  overflow-y: hidden;
 }
 .column-one {
   width: 300px;
-  height: calc(100vh);
+  min-height: calc(100vh);
   background: #1f8a70;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
 }
 .column-two {
+  height: calc(100vh);
+  overflow: auto;
+  flex: 1;
   padding: 20px;
+  background: #eee;
 }
 .logo-container {
   display: flex;
@@ -119,10 +146,6 @@ h2 {
   color: #484848;
   margin-bottom: 10px;
 }
-.column-two {
-  flex: 1;
-  background: #eee;
-}
 .about {
   margin-top: 50px;
   width: 100%;
@@ -133,8 +156,27 @@ h2 {
   justify-content: center;
   margin-top: 30%;
 }
+.work-item-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  padding: 10px 10px 10px 0px;
+  margin: 5px 5px 5px 0px;
+}
+.work-item {
+  height: 150px;
+  margin: 5px;
+  background: #c9c9c9;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px;
+}
+.item-action {
+  width: 100%;
+  /* display: flex; */
+  /* background: red; */
+}
 .projects {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 ul li {
   list-style-type: circle;
@@ -144,10 +186,9 @@ ul li {
 .project-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  padding: 10px;
-  margin: 5px;
-  padding-left: 0px;
-  margin-left: 0px;
+  padding: 10px 10px 10px 0px;
+  margin: 5px 5px 5px 0px;
+  height: auto;
 }
 .project-item {
   /* padding: 0px; */
@@ -155,7 +196,6 @@ ul li {
   margin: 5px;
   text-align: center;
   background: #cacaca;
-  height: 200px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
@@ -163,10 +203,18 @@ ul li {
 .overlay {
   opacity: 0;
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
+  height: 100%;
   position: absolute;
   top: 0;
   background: #00000085;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-weight: 500;
+  color: #eee;
 }
 .project-item:hover .overlay {
   opacity: 1;
