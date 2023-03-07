@@ -6,17 +6,52 @@
           <img src="../../public/profile.png" alt="" />
         </div>
       </div>
-      <div class="title">Frontend Developer</div>
-      <div class="social">
-        <svg-icon size class="social-icon" type="mdi" :path="path"></svg-icon>
-        <svg-icon class="social-icon" type="mdi" :path="linkedin"></svg-icon>
+      <div>
+        <div class="title">Frontend Developer</div>
+        <div class="social-container mt-10">
+          <svg-icon
+            class="social-icon mr-2"
+            type="mdi"
+            :path="email"
+          ></svg-icon>
+          <span>basartejason@gmail.com</span>
+        </div>
+        <div class="social-container">
+          <svg-icon
+            size
+            class="social-icon mr-2"
+            type="mdi"
+            :path="path"
+          ></svg-icon>
+          <a href="https://github.com/jsonbasarte" target="_blank">Github</a>
+        </div>
+        <div class="social-container">
+          <svg-icon
+            class="social-icon mr-2"
+            type="mdi"
+            :path="linkedin"
+          ></svg-icon>
+          <a href="https://www.linkedin.com/in/js0nbasarte" target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+        <div class="social-container">
+          <svg-icon
+            class="social-icon mr-2"
+            type="mdi"
+            :path="download"
+          ></svg-icon>
+          <a href="https://www.google.com" target="_blank">Resume</a>
+        </div>
+
+        <div></div>
       </div>
     </div>
     <div class="column-two">
       <div class="about">
         <h2>About</h2>
-        Highly motivated frontend developer with a passion for creating user
-        interfaces and a collaborative team member.
+        A Front-End Web Developer passionate about creating user interfaces and
+        interactive application.
       </div>
       <div class="my-works">
         <h2>My Works</h2>
@@ -24,13 +59,13 @@
           <div class="work-item">
             <div class="item-action">
               <v-btn class="mr-2" size="small">DEMO</v-btn>
-              <v-btn size="small">VIEW CODE</v-btn>
+              <!-- <v-btn size="small">VIEW CODE</v-btn> -->
             </div>
           </div>
           <div class="work-item">
             <div class="item-action">
               <v-btn class="mr-2" size="small">DEMO</v-btn>
-              <v-btn size="small">VIEW CODE</v-btn>
+              <!-- <v-btn size="small">VIEW CODE</v-btn> -->
             </div>
           </div>
         </div>
@@ -56,7 +91,7 @@
 </template>
 <script>
 import SvgIcon from "@jamescoyle/vue-icon";
-import { mdiGithub, mdiLinkedin } from "@mdi/js";
+import { mdiGithub, mdiLinkedin, mdiEmail, mdiDownload } from "@mdi/js";
 export default {
   components: {
     SvgIcon,
@@ -66,6 +101,8 @@ export default {
       projects: [1, 2, 23, 4],
       path: mdiGithub,
       linkedin: mdiLinkedin,
+      email: mdiEmail,
+      download: mdiDownload,
       images: [
         "../../dash-login.png",
         "../../vue-dashboard.png",
@@ -104,7 +141,7 @@ export default {
   overflow-y: hidden;
 }
 .column-one {
-  width: 300px;
+  width: 400px;
   min-height: calc(100vh);
   background: #1f8a70;
   display: flex;
@@ -134,7 +171,7 @@ export default {
   text-align: center;
   color: #eee;
   font-weight: 700;
-  margin-top: 80px;
+  margin-top: 40px;
   font-size: 1.5em;
 }
 img {
@@ -221,5 +258,16 @@ ul li {
 }
 .social-icon {
   color: #fff;
+}
+.social-container {
+  cursor: pointer;
+  display: flex;
+  color: #eee;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.social-container a {
+  color: #eee;
+  text-decoration: none;
 }
 </style>
