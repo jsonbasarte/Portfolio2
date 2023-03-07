@@ -3,7 +3,7 @@
     <div class="column-one">
       <div class="logo-container">
         <div class="logo">
-          <img src="../../public/profile.png" alt="" />
+          <img src="../assets/profile.png" alt="" />
         </div>
       </div>
       <div>
@@ -92,6 +92,11 @@
 <script>
 import SvgIcon from "@jamescoyle/vue-icon";
 import { mdiGithub, mdiLinkedin, mdiEmail, mdiDownload } from "@mdi/js";
+import dashboard from "../assets/vue-dashboard.png";
+import dashboardLogin from "../assets/dash-login.png";
+import callConfig from "../assets/call-config.png";
+import callLogs from "../assets/call-logs.png";
+import qvoiceLogin from "../assets/qvoice-login.png";
 export default {
   components: {
     SvgIcon,
@@ -103,13 +108,7 @@ export default {
       linkedin: mdiLinkedin,
       email: mdiEmail,
       download: mdiDownload,
-      images: [
-        "../../dash-login.png",
-        "../../vue-dashboard.png",
-        "../../call-config.png",
-        "../../call-logs.png",
-        "../../qvoice-login.png",
-      ],
+      images: [dashboard, dashboardLogin, callConfig, callLogs, qvoiceLogin],
     };
   },
   methods: {
